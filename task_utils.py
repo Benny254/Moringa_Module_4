@@ -4,7 +4,6 @@ from validation import (
     validate_due_date
 )
 
-
 def add_task(tasks, title, description, due_date):
     try:
         validate_task_title(title)
