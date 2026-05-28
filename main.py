@@ -1,4 +1,6 @@
-from task_utils import (
+# main.py
+
+from task_manager.task_utils import (
     add_task,
     mark_task_as_complete,
     view_pending_tasks,
@@ -8,49 +10,62 @@ from task_utils import (
 tasks = []
 
 
-def menu():
-    print("\nTask Management System")
-    print("1. Add Task")
-    print("2. Mark Task as Complete")
-    print("3. View Pending Tasks")
-    print("4. Track Progress")
-    print("5. Exit")
+def display_menu():
+    print("""
+====== TASK MANAGEMENT SYSTEM ======
+
+1. Add Task
+2. Mark Task as Complete
+3. View Pending Tasks
+4. Track Progress
+5. Exit
+
+===================================
+""")
 
 
 while True:
-    menu()
-    choice = input("Enter choice: ")
+    display_menu()
+
+    choice = input("Enter your choice: ")
 
     if choice == "1":
-        title = input("Enter title: ")
-        description = input("Enter description: ")
+        title = input("Enter task title: ")
+        description = input("Enter task description: ")
         due_date = input("Enter due date (YYYY-MM-DD): ")
 
         add_task(tasks, title, description, due_date)
 
     elif choice == "2":
-        if len(tasks) == 0:
+
+        if not tasks:
             print("No tasks available.")
             continue
 
-        for i, task in enumerate(tasks):
-            print(f"{i}. {task['title']}")
+        print("\nAll Tasks:")
+        for index, task in enumerate(tasks):
+            print(f"{index}. {task['title']} - Completed: {task['completed']}")
 
         try:
-            num = int(input("Enter task number: "))
-            mark_task_as_complete(tasks, num)
+            task_number = int(
+                input("Enter task number to mark as complete: ")
+            )
+
+            mark_task_as_complete(tasks, task_number)
+
         except ValueError:
-            print("Invalid input.")
+            print("Please enter a valid number.")
 
     elif choice == "3":
         view_pending_tasks(tasks)
 
     elif choice == "4":
-        print(f"Progress: {calculate_progress(tasks):.2f}%")
+        progress = calculate_progress(tasks)
+        print(f"Progress: {progress:.2f}% completed")
 
     elif choice == "5":
-        print("Goodbye!")
+        print("Exiting Task Management System...")
         break
 
     else:
-        print("Invalid choice.")
+        print("Invalid choice. Please try again.")
