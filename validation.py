@@ -1,26 +1,24 @@
-# task_manager/validation.py
-
 from datetime import datetime
 
 
 def validate_task_title(title):
     if not title.strip():
-        print("Error: Task title cannot be empty.")
-        return False
-    return True
+        raise ValueError("Task title cannot be empty.")
 
 
 def validate_task_description(description):
     if not description.strip():
-        print("Error: Task description cannot be empty.")
-        return False
-    return True
+        raise ValueError("Task description cannot be empty.")
+
+    if len(description) > 500:
+        raise ValueError("Task description cannot exceed 500 characters.")
 
 
 def validate_due_date(due_date):
+    if not due_date.strip():
+        raise ValueError("Due date cannot be empty.")
+
     try:
         datetime.strptime(due_date, "%Y-%m-%d")
-        return True
     except ValueError:
-        print("Error: Due date must be in YYYY-MM-DD format.")
-        return False
+        raise ValueError("Invalid date format. Use YYYY-MM-DD.")
