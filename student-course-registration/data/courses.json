@@ -16,5 +16,11 @@
     "course_name": "Javascript",
     "trainer": "Titus",
     "capacity": 12
+  },
+  {
+    "course_id": "QR4",
+    "course_name": "Computer",
+    "trainer": "Vicky",
+    "capacity": 21
   }
 ]

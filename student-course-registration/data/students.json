@@ -16,5 +16,11 @@
     "name": "Sassy",
     "email": "sa@gmail.com",
     "phone_number": "07355758696"
+  },
+  {
+    "student_id": "Stud01",
+    "name": "Mike",
+    "email": "mike@gmail.com",
+    "phone_number": "076436646788"
   }
 ]
