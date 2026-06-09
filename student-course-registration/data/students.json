@@ -1,0 +1,20 @@
+[
+  {
+    "student_id": "stud02",
+    "name": "benny",
+    "email": "ben@gmail.com",
+    "phone_number": "07253337887"
+  },
+  {
+    "student_id": "stud09",
+    "name": "Kenny",
+    "email": "keny@gmail.com",
+    "phone_number": "07364645755"
+  },
+  {
+    "student_id": "std7",
+    "name": "Sassy",
+    "email": "sa@gmail.com",
+    "phone_number": "07355758696"
+  }
+]

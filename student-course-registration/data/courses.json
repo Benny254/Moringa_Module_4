@@ -1,0 +1,20 @@
+[
+  {
+    "course_id": "python",
+    "course_name": "programming",
+    "trainer": "titus",
+    "capacity": 9
+  },
+  {
+    "course_id": "java",
+    "course_name": "programming",
+    "trainer": "joseph",
+    "capacity": 32
+  },
+  {
+    "course_id": "TR5",
+    "course_name": "Javascript",
+    "trainer": "Titus",
+    "capacity": 12
+  }
+]
